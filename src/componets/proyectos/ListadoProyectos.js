@@ -1,18 +1,26 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+
+import proyectoContext from "../../context/proyectos/proyectoContext";
 
 import Proyecto from "./Proyecto";
 
 const ListadoProyectos = () => {
-  const proyectos = [
-    { nombre: "Tienda Virtual" },
-    { nombre: "Intranet" },
-    { nombre: "Blog" }
-  ];
+  // Importando proyectos desde el state inicial en proyectosState.js
+  const proyectosContext = useContext(proyectoContext);
+  const { proyectos, obtenerProyectos } = proyectosContext;
+
+  // Obtener proyectos cuando carga el componente
+  useEffect(() => {
+    obtenerProyectos();
+  }, []);
+
+  // Validando si hay rpoyectos
+  if (proyectos.length === 0) return null;
 
   return (
     <ul className="listado-proyectos">
       {proyectos.map(proyecto => (
-        <Proyecto proyecto={proyecto} />
+        <Proyecto key={proyecto.id} proyecto={proyecto} />
       ))}
     </ul>
   );
