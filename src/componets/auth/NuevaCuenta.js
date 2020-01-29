@@ -76,7 +76,7 @@ const NuevaCuenta = () => {
             <label htmlFor="password">Password</label>
             <input
               type="password"
-              id="password"
+              id="confirmar"
               name="confirmar"
               placeholder="Tu Password"
               value={confirmar}
