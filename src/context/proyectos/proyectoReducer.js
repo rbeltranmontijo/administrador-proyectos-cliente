@@ -36,7 +36,6 @@ export default (state, action) => {
       };
 
     case PROYECTO_ACTUAL:
-      console.log(action.payload);
       return {
         ...state,
         proyecto: state.proyectos.filter(
