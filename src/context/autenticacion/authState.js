@@ -11,6 +11,7 @@ import {
 } from "../../types";
 
 import clienteAxios from "../../config/axios";
+import tokenAuth from "../../config/token";
 
 const AuthState = props => {
   const initialState = {
@@ -53,13 +54,17 @@ const AuthState = props => {
 
     if (token) {
       // Funcion para enviar el token por headers
+      tokenAuth(token);
     }
 
     try {
       const respuesta = await clienteAxios.get("/api/auth");
-      console.log(respuesta);
+      dispatch({
+        type: OBTENER_USUARIO,
+        payload: respuesta.data.usuario
+      });
     } catch (error) {
-      console.log(error);
+      console.log(error.response);
       dispatch({
         type: LOGIN_ERROR
       });
