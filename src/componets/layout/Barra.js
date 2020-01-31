@@ -21,7 +21,7 @@ const Barra = () => {
 
       <nav className="nav-principal">
         <button
-          className="btn btn-blak cerrar-sesion"
+          className="btn btn-blank  cerrar-sesion"
           onClick={() => cerrarSesion()}
         >
           Cerrar Sesión

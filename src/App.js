@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Login from "./componets/auth/Login";
 import NuevaCuenta from "./componets/auth/NuevaCuenta";
 import Proyectos from "./componets/proyectos/Proyectos";
+import RutaPrivada from "./componets/rutas/RutaPrivada";
 
 import ProyectoState from "./context/proyectos/proyectoState";
 import TareaState from "./context/tareas/tareaState";
@@ -28,7 +29,7 @@ function App() {
               <Switch>
                 <Route exact path="/" component={Login} />
                 <Route exact path="/nueva-cuenta" component={NuevaCuenta} />
-                <Route exact path="/proyectos" component={Proyectos} />
+                <RutaPrivada exact path="/proyectos" component={Proyectos} />
               </Switch>
             </BrowserRouter>
           </AuthState>
