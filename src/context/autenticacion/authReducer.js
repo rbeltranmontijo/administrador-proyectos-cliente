@@ -6,7 +6,7 @@ import {
   LOGIN_ERROR,
   CERRAR_SESION
 } from "../../types";
-import { stat } from "fs";
+
 export default (state, action) => {
   switch (action.type) {
     case REGISTRO_EXITOSO:
