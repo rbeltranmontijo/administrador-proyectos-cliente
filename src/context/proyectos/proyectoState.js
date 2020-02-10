@@ -78,11 +78,19 @@ const ProyectoState = props => {
   };
 
   // Eliminar proyecto
-  const eliminarProyecto = proyectoID => {
-    dispatch({
-      type: ELIMINAR_PROYECTO,
-      payload: proyectoID
-    });
+  const eliminarProyecto = async proyectoID => {
+    try {
+      const url = `/api/proyectos/${proyectoID}`;
+      console.log(url);
+      const respuesta = await clienteAxios.delete(url);
+      console.log(respuesta);
+      dispatch({
+        type: ELIMINAR_PROYECTO,
+        payload: proyectoID
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

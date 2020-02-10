@@ -20,7 +20,8 @@ const ListadoTareas = () => {
   const [proyectoActual] = proyecto;
 
   const onClick = () => {
-    eliminarProyecto(proyectoActual.id);
+    // console.log("boton eliminar proyecto: ", proyectoActual._id);
+    eliminarProyecto(proyectoActual._id);
   };
 
   return (
