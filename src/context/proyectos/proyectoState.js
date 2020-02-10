@@ -22,13 +22,6 @@ const ProyectoState = props => {
     proyecto: null
   };
 
-  const proyectos = [
-    { id: 1, nombre: "Tienda Virtual" },
-    { id: 2, nombre: "Intranet" },
-    { id: 3, nombre: "Blog" },
-    { id: 4, nombre: "MERN" }
-  ];
-
   // Dispatch para ejecutar las acciones
   const [state, dispatch] = useReducer(proyectoReducer, initialState);
 
@@ -40,11 +33,17 @@ const ProyectoState = props => {
     });
   };
 
-  const obtenerProyectos = () => {
-    dispatch({
-      type: OBTENER_PROYECTOS,
-      payload: proyectos
-    });
+  const obtenerProyectos = async () => {
+    try {
+      const resultado = await clienteAxios.get("api/proyectos");
+
+      dispatch({
+        type: OBTENER_PROYECTOS,
+        payload: resultado.data.proyectos
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   // Agregar nuevo proyecto
@@ -71,6 +70,7 @@ const ProyectoState = props => {
 
   // Selecciona el proyecto que el usuario dio click
   const proyectoActual = proyectoID => {
+    console.log(proyectoID);
     dispatch({
       type: PROYECTO_ACTUAL,
       payload: proyectoID
