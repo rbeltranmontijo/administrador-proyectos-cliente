@@ -3,7 +3,7 @@ import { Route, Redirect } from "react-router-dom";
 import AuthContext from "../../context/autenticacion/authContext";
 
 const RutaPrivada = ({ component: Component, ...props }) => {
-  console.log(props);
+  // console.log(props);
 
   const autContext = useContext(AuthContext);
   const { autenticado, cargando, usuarioAutenticado } = autContext;

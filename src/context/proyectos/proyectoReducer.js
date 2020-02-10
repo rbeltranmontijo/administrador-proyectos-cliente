@@ -38,7 +38,7 @@ export default (state, action) => {
       };
 
     case PROYECTO_ACTUAL:
-      console.log(action.payload);
+      // console.log(action.payload);
       return {
         ...state,
         proyecto: state.proyectos.filter(
@@ -47,7 +47,7 @@ export default (state, action) => {
       };
 
     case ELIMINAR_PROYECTO:
-      console.log(action.payload);
+      // console.log(action.payload);
       return {
         ...state,
         proyectos: state.proyectos.filter(

@@ -57,7 +57,7 @@ const ProyectoState = props => {
     // Agregar al state con un dispatch
     try {
       const resultado = await clienteAxios.post("/api/proyectos", proyecto);
-      console.log(resultado);
+      // console.log(resultado);
       dispatch({
         type: AGREGAR_PROYECTO,
         payload: resultado.data
@@ -80,7 +80,7 @@ const ProyectoState = props => {
 
   // Selecciona el proyecto que el usuario dio click
   const proyectoActual = proyectoID => {
-    console.log(proyectoID);
+    // console.log(proyectoID);
     dispatch({
       type: PROYECTO_ACTUAL,
       payload: proyectoID
@@ -91,9 +91,9 @@ const ProyectoState = props => {
   const eliminarProyecto = async proyectoID => {
     try {
       const url = `/api/proyectos/${proyectoID}`;
-      console.log(url);
+      // console.log(url);
       const respuesta = await clienteAxios.delete(url);
-      console.log(respuesta);
+      // console.log(respuesta);
       dispatch({
         type: ELIMINAR_PROYECTO,
         payload: proyectoID
