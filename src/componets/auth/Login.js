@@ -34,6 +34,7 @@ const Login = props => {
   const { email, password } = usuario;
 
   const onChange = e => {
+    console.log("login");
     guardarUsuario({
       ...usuario,
       [e.target.name]: e.target.value
