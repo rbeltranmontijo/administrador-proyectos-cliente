@@ -8,7 +8,7 @@ const Tarea = ({ tarea }) => {
   const {
     eliminarTarea,
     obtenerTareas,
-    estadoTarea,
+    actualizarTarea,
     guardarTareaActual
   } = tareasContext;
 
@@ -29,7 +29,7 @@ const Tarea = ({ tarea }) => {
       tarea.estado = true;
     }
 
-    estadoTarea(tarea);
+    actualizarTarea(tarea);
   };
 
   // Agrega una tarea actual cuando se edita

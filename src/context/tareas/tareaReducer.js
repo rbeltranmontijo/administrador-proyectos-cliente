@@ -43,7 +43,7 @@ export default (state, action) => {
       return {
         ...state,
         tareasproyecto: state.tareasproyecto.map(tarea =>
-          tarea.id === action.payload.id ? action.payload : tarea
+          tarea._id === action.payload._id ? action.payload : tarea
         )
       };
     case TAREA_ACTUAL:
