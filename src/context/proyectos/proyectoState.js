@@ -1,5 +1,4 @@
 import React, { useReducer } from "react";
-import uuid from "uuid";
 
 import proyectoContext from "./proyectoContext";
 import proyectoReducer from "./proyectoReducer";
@@ -92,8 +91,7 @@ const ProyectoState = props => {
     try {
       const url = `/api/proyectos/${proyectoID}`;
       // console.log(url);
-      const respuesta = await clienteAxios.delete(url);
-      // console.log(respuesta);
+      await clienteAxios.delete(url);
       dispatch({
         type: ELIMINAR_PROYECTO,
         payload: proyectoID
